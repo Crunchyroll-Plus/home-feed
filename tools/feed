@@ -11,6 +11,10 @@ def getConfig() -> dict:
     with open(f"{current_directory}/metadata.json", "r") as f:
         return json.load(f)
     
+def setConfig(config: dict) -> None:
+    with open(f"{current_directory}/metadata.json", "w") as f:
+        json.dump(config, f, indent = 4)
+    
 def scanIds(items, feed_type, id, counter = 0, max_scans=10) -> int | None:
     found = [x for x in items if x["id"] == f"{feed_type}-{id}"]
 
@@ -41,6 +45,8 @@ def setupCollection(args):
 
 def createCollection(feed_path, feed_type) -> None:
     with open(feed_path, "w") as f:
+        config = getConfig()
+
         info = feed_type == "hero_carousel" and {
             "type": feed_type,
             "heros": []
@@ -50,6 +56,10 @@ def createCollection(feed_path, feed_type) -> None:
         }
 
         f.write(json.dumps(info, indent=4))
+
+        if not feed_type in config["available_feeds"]:
+            config["available_feeds"].append(feed_type)
+            setConfig(config)
 
 def createItem(item_id, item_type, **kwargs) -> dict:
     result = kwargs
