@@ -1,0 +1,23 @@
+{
+    "type": "curated_collection",
+    "items": [
+        {
+            "id": "curated_collection-1000000",
+            "title": "Developer Picks",
+            "description": "Top picks from the developers over at Crunchyroll+",
+            "response_type": "series",
+            "display_type": "shelf",
+            "ids": [
+                "GRMG8ZQZR",
+                "GYP8DP1MY",
+                "G4PH0WXVJ"
+            ],
+            "panel": null,
+            "source_media_id": null,
+            "source_media_title": null,
+            "link": null,
+            "query_params": null,
+            "resource_type": "curated_collection"
+        }
+    ]
+}
