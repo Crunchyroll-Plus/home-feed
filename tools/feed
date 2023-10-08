@@ -202,6 +202,93 @@ class CommandHandler:
             ]
         ),
         CommandInformation(
+            "edit", 
+            "Edit a collection item.",
+            [
+                {
+                    "name": "collection_type",
+                    "help": "Name of the collection type",
+                    "choices": feed_names
+                },
+                {
+                    "name": "id",
+                    "help": "Id of the item you want to edit",
+                },
+                {
+                    "name": ["title"],
+                    "default": "Collection Title",
+                    "help": "A title for the item",
+                    "nargs": "?"
+                },
+                {
+                    "name": ["-d", "--description"],
+                    "default": "",
+                    "help": "Description for the item",
+                },
+                {
+                    "name": ["-pos", "--position"],
+                    "default": "5",
+                    "help": "Position for the item.",
+                    "type": int
+                },
+                {
+                    "name": ["-rt", "--response-type"],
+                    "dest": "response_type",
+                    "default": "series",
+                    "help": "Response type for the item",
+                    "choices": [
+                        "recommendations",
+                        "history",
+                        "watchlist",
+                        "browse",
+                        "because_you_watched",
+                        "series",
+                        "recent_episodes"
+                        # "news_feed",
+                        # "artist",
+                        # "music_video",
+                        # "concert",
+                        # "music_media_mixed",
+                    ]
+                },
+                {
+                    "name": ["-dt", "--display-type"],
+                    "dest": "display_type",
+                    "help": "Display type for the item",
+                    "default": "shelf"
+                },
+                {
+                    "name": ["-is", "--ids"],
+                    "help": "List of ids for a curated collection.",
+                },
+                {
+                    "name": ["-p", "--panel"],
+                    "help": "JSON object of the panel you want to use.",
+                },
+                {
+                    "name": ["-mid", "--media-id"],
+                    "dest": "source_media_id",
+                    "default": "",
+                    "help": "The media id that'll be used."
+                },
+                {
+                    "name": ["-mtitle", "--media-title"],
+                    "dest": "source_media_title",
+                    "default": "",
+                    "help": "The media title that'll be used."
+                },
+                {
+                    "name": ["-l", "--link"],
+                    "help": "The link used for dynamic collections."
+                },
+                {
+                    "name": ["-qp", "--query-params"],
+                    "dest": "query_params",
+                    "help": "The search parameters used when the response_type is 'browse'"
+                }
+            ]
+        ),
+        CommandInformation(
             "remove",
             "Remove a collection item or remove a collection type.",
             [
@@ -271,6 +358,45 @@ class CommandHandler:
 
         items.append(item)
 
+        with open(feed_path, "w") as f:
+            json.dump(data, f, indent = 4)
+    
+    @staticmethod
+    def edit(args):
+        feed_type, feed_path = setupCollection(args)
+        
+        with open(feed_path, "r") as f:
+            data = json.load(f)
+
+        items: list = feed_type == "hero_carousel" and data["heros"] or data["items"]
+        
+        args.ids = not args.ids is None and args.ids.split(",") or None
+        args.panel = not args.panel is None and json.loads(args.panel) or None
+
+        extra = vars(args)
+
+        extra.pop("func")
+        extra.pop("command")
+        extra.pop("collection_type")
+
+        extra["id"] = f"{feed_type}-{extra.pop('id')}"
+
+        item = next((val for val in items if val["id"] == extra['id']), None)
+        
+
+        for key, value in extra.items():
+            if value is None or value == "": continue
+
+            if key == "ids":
+                if value[0] == " " or value[0] == "clear": item["ids"] = []
+                else:
+                    for id in value:
+                        item["ids"].append(id)
+                
+                value = item["ids"]
+
+            item[key] = value
+        
         with open(feed_path, "w") as f:
             json.dump(data, f, indent = 4)
         
