@@ -297,13 +297,7 @@ class CommandHandler:
                     "help": "Name of the collection type"
                 }
             ]
-        ),
-        CommandInformation(
-            "config",
-            "Edit the home feed's config file (/metadata.json).",
-            [
-
-            ])
+        )
     ]
 
     def __init__(self, description):
@@ -403,10 +397,6 @@ class CommandHandler:
     @staticmethod
     def remove(args):
         print("remove", args)
-    
-    @staticmethod
-    def config(args):
-        print("config", args)
 
 if __name__ == "__main__":
     handler = CommandHandler("A tool for managing a CR home feed repo.")
