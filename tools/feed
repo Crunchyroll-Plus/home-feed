@@ -216,7 +216,7 @@ class CommandHandler:
                 },
                 {
                     "name": ["title"],
-                    "default": "Collection Title",
+                    "default": "",
                     "help": "A title for the item",
                     "nargs": "?"
                 },
@@ -227,7 +227,7 @@ class CommandHandler:
                 },
                 {
                     "name": ["-pos", "--position"],
-                    "default": "5",
+                    "default": "",
                     "help": "Position for the item.",
                     "type": int
                 },
