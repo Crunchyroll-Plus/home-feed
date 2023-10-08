@@ -181,11 +181,13 @@ class CommandHandler:
                 {
                     "name": ["-mid", "--media-id"],
                     "dest": "source_media_id",
+                    "default": "",
                     "help": "The media id that'll be used."
                 },
                 {
                     "name": ["-mtitle", "--media-title"],
                     "dest": "source_media_title",
+                    "default": "",
                     "help": "The media title that'll be used."
                 },
                 {
@@ -255,7 +257,13 @@ class CommandHandler:
         args.ids = not args.ids is None and args.ids.split(",") or None
         args.panel = not args.panel is None and json.loads(args.panel) or None
 
-        item = createItem(args.id, feed_type, **vars(args))
+        extra = vars(args)
+
+        for key in list(extra):
+            if extra[key] == None:
+                extra.pop(key)
+
+        item = createItem(args.id, feed_type, **extra)
 
         item.pop("func")
         item.pop("command")

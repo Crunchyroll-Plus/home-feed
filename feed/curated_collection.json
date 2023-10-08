@@ -13,11 +13,8 @@
                 "GYP8DP1MY",
                 "G4PH0WXVJ"
             ],
-            "panel": null,
-            "source_media_id": null,
-            "source_media_title": null,
-            "link": null,
-            "query_params": null,
+            "source_media_id": "",
+            "source_media_title": "",
             "resource_type": "curated_collection"
         }
     ]
