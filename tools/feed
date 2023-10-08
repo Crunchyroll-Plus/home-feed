@@ -129,6 +129,12 @@ class CommandHandler:
                     "help": "Description for the item",
                 },
                 {
+                    "name": ["-pos", "--position"],
+                    "default": "5",
+                    "help": "Position for the item.",
+                    "type": int
+                },
+                {
                     "name": ["-rt", "--response-type"],
                     "dest": "response_type",
                     "default": "series",

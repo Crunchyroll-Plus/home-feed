@@ -5,6 +5,7 @@
             "id": "curated_collection-1000000",
             "title": "Developer Picks",
             "description": "Top picks from the developers over at Crunchyroll+",
+            "position": 5,
             "response_type": "series",
             "display_type": "shelf",
             "ids": [
