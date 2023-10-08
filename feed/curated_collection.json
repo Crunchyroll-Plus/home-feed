@@ -3,7 +3,7 @@
     "items": [
         {
             "id": "curated_collection-1000000",
-            "title": "Collection Title",
+            "title": "Developer Picks",
             "description": "Top picks from the developers over at Crunchyroll+",
             "position": 5,
             "response_type": "series",

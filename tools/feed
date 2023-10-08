@@ -385,7 +385,7 @@ class CommandHandler:
         
 
         for key, value in extra.items():
-            if value is None or value == "": continue
+            if value is None or value == "" or value == "Collection Title": continue
 
             if key == "ids":
                 if value[0] == " " or value[0] == "clear": item["ids"] = []
