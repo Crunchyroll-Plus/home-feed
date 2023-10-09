@@ -8,6 +8,11 @@
             "position": 7,
             "response_type": "series",
             "display_type": "shelf",
+            "__links__": {
+                "resource": {
+                    "href": "https://www.google.com"
+                }
+            },
             "ids": [
                 "GRMG8ZQZR",
                 "GYP8DP1MY",
