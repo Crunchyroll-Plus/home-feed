@@ -25,7 +25,7 @@
             "query_params": {
                 "n": 100,
                 "sort_by": "newly_added",
-                "fliter": "watched,not_watched"
+                "filter": "watched,not_watched"
             }
         }
     ]
