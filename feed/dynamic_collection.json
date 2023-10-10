@@ -15,9 +15,9 @@
             }
         },
         {
-            "title": "New Episodes",
-            "description": "Just incase Crunchyroll decides to remove it again.",
-            "position": 6,
+            "title": "New Episodes From Series You Watch.",
+            "description": "",
+            "position": 7,
             "id": "dynamic_collection-99990000001",
             "response_type": "browse",
             "display_type": "shelf",
