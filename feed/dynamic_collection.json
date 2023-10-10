@@ -15,13 +15,13 @@
             }
         },
         {
-            "title": "New Episodes From Series You Watch.",
+            "title": "Newly Updated Series You Watch.",
             "description": "",
             "position": 7,
             "id": "dynamic_collection-99990000001",
             "response_type": "browse",
             "display_type": "shelf",
-            "link": "/content/v2/discover/browse?locale={text_locale}&n=100&preferred_audio_language={audio_locale}&sort_by=newly_added&filter=watched",
+            "link": "/content/v2/discover/browse?locale={text_locale}&n=100&preferred_audio_language={audio_locale}&sort_by=newly_added&filter=watched,not_watched",
             "query_params": {
                 "n": 100,
                 "sort_by": "newly_added",
