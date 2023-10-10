@@ -8,10 +8,23 @@
             "id": "dynamic_collection-99990000000",
             "response_type": "browse",
             "display_type": "shelf",
-            "link": "/content/v2/discover/browse?locale={text_locale}&n=20&preferred_audio_language={audio_locale}&sort_by=newly_added&!{{'test': 5}}",
+            "link": "/content/v2/discover/browse?locale={text_locale}&n=20&preferred_audio_language={audio_locale}&sort_by=newly_added",
             "query_params": {
                 "n": 20,
                 "sort_by": "newly_added"
+            }
+        },
+        {
+            "title": "New Episodes",
+            "description": "Just incase Crunchyroll decides to remove it again.",
+            "position": 6,
+            "id": "dynamic_collection-99990000001",
+            "response_type": "history",
+            "display_type": "shelf",
+            "link": "/content/v2/discover/browse?locale={text_locale}&n=100&preferred_audio_language={audio_locale}&sort_by=newly_added,watched",
+            "query_params": {
+                "n": 100,
+                "sort_by": "newly_added,watched"
             }
         }
     ]
