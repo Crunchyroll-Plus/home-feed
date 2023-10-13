@@ -21,7 +21,7 @@
             "id": "dynamic_collection-99990000001",
             "response_type": "browse",
             "display_type": "shelf",
-            "link": "/content/v2/discover/browse?locale={text_locale}&n=100&preferred_audio_language={audio_locale}&sort_by=newly_added&type=episode&filter=not_watched&action=episode2series",
+            "link": "/content/v2/discover/browse?locale={text_locale}&n=500&preferred_audio_language={audio_locale}&sort_by=newly_added&type=episode&filter=not_watched&action=episode2series",
             "query_params": {
                 "n": 100,
                 "sort_by": "newly_added",
