@@ -15,17 +15,15 @@
             }
         },
         {
-            "title": "Newly Updated Series You Haven't Finished",
+            "title": "Newly Released",
             "description": "",
-            "position": 5,
+            "position": 3,
             "id": "dynamic_collection-99990000001",
-            "response_type": "browse",
+            "response_type": "history",
             "display_type": "shelf",
-            "link": "/content/v2/discover/browse?locale={text_locale}&n=250&preferred_audio_language={audio_locale}&sort_by=newly_added&type=episode&filter=not_watched&action=episode2series,new_episodes",
+            "link": "/content/v2/discover/browse?locale={text_locale}&n=250&preferred_audio_language={audio_locale}&sort_by=newly_added&type=episode&filter=not_watched&action=new_episodes,episode2history",
             "query_params": {
-                "n": 100,
-                "sort_by": "newly_added",
-                "filter": "watched,not_watched"
+                "n": 20
             }
         }
     ]
