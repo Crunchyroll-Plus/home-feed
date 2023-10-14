@@ -17,7 +17,7 @@
         {
             "title": "New Episodes",
             "description": "",
-            "position": 2,
+            "position": 3,
             "id": "dynamic_collection-99990000001",
             "response_type": "history",
             "display_type": "shelf",
