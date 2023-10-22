@@ -1,6 +1,6 @@
 {
     "name": "Official CR+ Feed",
-    "description": "Crunchyroll Plus' official feed list.",
+    "description": "Crunchyroll Plus's official feed list.",
     "link": "/feed",
     "available_feeds": [
         "hero_carousel",
